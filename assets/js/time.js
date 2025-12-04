@@ -3,14 +3,13 @@
 //  ┴ ┴┴ ┴└─┘
 // Set time and Date
 
-window.onload = displayClock();
 function displayClock() {
 	const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 	var d = new Date();
 	var mm = monthNames[d.getMonth()];
 	var dd = d.getDate();
-	var min = (mins = ('0' + d.getMinutes()).slice(-2));
+	var min = ('0' + d.getMinutes()).slice(-2);
 	var hh = d.getHours();
 	var ampm = '';
 
@@ -26,6 +25,9 @@ function displayClock() {
 
 	document.getElementById('month').innerText = mm;
 	document.getElementById('day').innerText = dd;
+}
 
-	setTimeout(displayClock, 1000);
+window.onload = function() {
+	displayClock();
+	setInterval(displayClock, 10000);
 }

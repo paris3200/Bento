@@ -26,8 +26,9 @@ const CONFIG = {
   bentoLayout: "bento", // 'bento', 'lists', 'buttons'
 
   // Weather
-  weatherKey: "SUPERSECRETKEY", // Write here your API Key
-  weatherIcons: "Nord", // 'Onedark', 'Nord', 'Dark', 'White'
+  // Note: weatherKey is now loaded from config.local.js (see config.local.example.js)
+  weatherKey: "", // This will be overridden by CONFIG_LOCAL.weatherKey
+  weatherIcons: "White", // 'Onedark', 'Nord', 'Dark', 'White'
   weatherUnit: "F", // 'F', 'C'
   language: "en", // More languages in https://openweathermap.org/current#multi
 
@@ -139,10 +140,6 @@ const CONFIG = {
       id: "1",
       links: [
         {
-          name: "Pinnacle Elementary",
-          link: "https://www.pinnacle.stokes.k12.nc.us/",
-        },
-        {
           name: "Chestnut Grove",
           link: "https://www.chestnutgrove.stokes.k12.nc.us/",
         },
@@ -157,24 +154,24 @@ const CONFIG = {
       ],
     },
     {
-      icon: "coffee",
+      icon: "github",
       id: "2",
       links: [
         {
-          name: "Scoutbook",
-          link: "https://Scoutbook.scouting.org",
+          name: "OHC 400",
+          link: "https://github.com/ohc400/ohc400dotorg",
         },
         {
-          name: "",
-          link: "",
+          name: "Scorched Tree leather",
+          link: "https://github.com/paris3200/scorched-tree-leather",
         },
         {
-          name: "",
-          link: "",
+          name: "Apis Archive",
+          link: "https://github.com/paris3200/apisarchive",
         },
         {
-          name: "",
-          link: "",
+          name: "JasonParis.dev",
+          link: "https://github.com/paris3200/jasonparis.dev",
         },
       ],
     },
@@ -228,3 +225,8 @@ const CONFIG = {
     },
   ],
 };
+
+// Merge local configuration if available
+if (typeof CONFIG_LOCAL !== 'undefined') {
+  Object.assign(CONFIG, CONFIG_LOCAL);
+}
