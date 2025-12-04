@@ -16,7 +16,12 @@ var tempUnit = CONFIG.weatherUnit;
 
 const KELVIN = 273.15;
 const key = `${CONFIG.weatherKey}`;
+
+// Initial weather fetch
 setPosition();
+
+// Refresh weather every 15 minutes (900000ms)
+setInterval(setPosition, 900000);
 
 function setPosition(position) {
   if (!CONFIG.trackLocation || !navigator.geolocation) {
