@@ -17,13 +17,14 @@
   --icon: 3vh; /* Icon Size */
 
   /* Fonts Color */
-  --fg: #4c4f69; /* Foreground color */
-  --sfg: #6c6f85; /* Secondary Foreground color */
+  --fg: #4c4f69; /* Foreground color - Text */
+  --sfg: #6c6f85; /* Secondary Foreground color - Subtext0 */
 
   /* Light Colors - Catppuccin Latte */
-  --accent: #1e66f5; /* Hover color */
-  --background: #eff1f5; /* Background color */
-  --cards: #ccd0da; /* Cards color */
+  --accent: #7287fd; /* Hover color - Lavender */
+  --accent-fg: #eff1f5; /* Text color on accent background */
+  --background: #eff1f5; /* Background color - Base */
+  --cards: #ccd0da; /* Cards color - Surface0 */
 
   /* Image background  */
   --imgbg: url(assets/background.jpg); /* Image URL */
@@ -35,13 +36,14 @@
 
 .darktheme {
   /* Dark Colors - Catppuccin Mocha */
-  --accent: #89b4fa; /* Hover color */
-  --background: #1e1e2e; /* Background Color */
-  --cards: #313244; /* Cards color */
+  --accent: #89b4fa; /* Hover color - Blue */
+  --accent-fg: #1e1e2e; /* Text color on accent background - Base */
+  --background: #1e1e2e; /* Background Color - Base */
+  --cards: #313244; /* Cards color - Surface0 */
 
   /* Fonts Color */
-  --fg: #cdd6f4; /* Foreground color */
-  --sfg: #a6adc8; /* Secondary Foreground color */
+  --fg: #cdd6f4; /* Foreground color - Text */
+  --sfg: #a6adc8; /* Secondary Foreground color - Subtext0 */
 
   /* Image background  */
   --imgcol: linear-gradient(
@@ -275,7 +277,7 @@ body {
   background-color: var(--accent);
 }
 .button:hover svg {
-  stroke: var(--sfg);
+  stroke: var(--accent-fg);
 }
 
 .listsContainer {
@@ -323,7 +325,7 @@ body {
 }
 .listItem:hover {
   background-color: var(--accent);
-  color: var(--sfg);
+  color: var(--accent-fg);
 }
 
 /* M E D I A - Q U E R I E S */

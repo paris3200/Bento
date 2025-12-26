@@ -9,14 +9,14 @@ const themeToggle = document.querySelector('#themeButton');
 const enableDark = () => {
 	document.body.classList.add('darktheme');
 	localStorage.setItem('darkTheme', 'enabled');
-	themeToggle.innerHTML = `<i id="themeButton__icon" icon-name="sun"></i>`;
+	themeToggle.innerHTML = `<i id="themeButton__icon" data-lucide="sun"></i>`;
 	lucide.createIcons();
 };
 
 const disableDark = () => {
 	document.body.classList.remove('darktheme');
 	localStorage.setItem('darkTheme', null);
-	themeToggle.innerHTML = `<i id="themeButton__icon" icon-name="moon"></i>`;
+	themeToggle.innerHTML = `<i id="themeButton__icon" data-lucide="moon"></i>`;
 	lucide.createIcons();
 };
 
